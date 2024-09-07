@@ -47,8 +47,8 @@ const upload = multer(uploadConfig.upload("./tmp"));
  router.get('/category', isAuthenticated, new ListCategoryController().handle)
 
             //  ------- ROTAS PRODUTOS------------
-router.post('/product', isAuthenticated, upload.single('file'), new CreateProductController().handle)
-
+//router.post('/product', isAuthenticated, upload.single('file'), new CreateProductController().handle)
+router.post('/product', isAuthenticated, new CreateProductController().handle)
 router.get('/category/product', isAuthenticated, new ListByCategoryController().handle )
 
 
